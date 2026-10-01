@@ -20,144 +20,163 @@ function Login() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 flex items-center justify-center px-6">
-      {/* Background Decoration */}
-      <div className="absolute top-[-100px] left-[-100px] w-80 h-80 bg-blue-500 rounded-full blur-3xl opacity-30"></div>
-      <div className="absolute bottom-[-120px] right-[-120px] w-96 h-96 bg-cyan-400 rounded-full blur-3xl opacity-25"></div>
-      <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
-
-      {/* Main Card */}
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-hidden border border-white/20 bg-white/10 backdrop-blur-2xl shadow-2xl">
+    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-cyan-900">
+      <div className="h-full w-full grid grid-cols-1 lg:grid-cols-2">
         
-        {/* Left Content */}
-        <div className="hidden lg:flex flex-col justify-between p-12 text-white bg-gradient-to-br from-blue-600/80 via-cyan-500/70 to-blue-900/80">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm mb-8">
-              <span className="w-2 h-2 bg-green-300 rounded-full"></span>
-              Secure Dashboard Access
-            </div>
-
-            <h1 className="text-5xl font-bold leading-tight mb-6">
-              Welcome back to your workspace.
-            </h1>
-
-            <p className="text-blue-100 text-lg leading-relaxed">
-              Monitor your activity, manage your data, and access your dashboard
-              with a clean and modern login experience.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 mt-10">
-            <div className="bg-white/20 rounded-2xl p-5 backdrop-blur-md">
-              <h3 className="text-2xl font-bold">24/7</h3>
-              <p className="text-sm text-blue-100 mt-1">System Access</p>
-            </div>
-
-            <div className="bg-white/20 rounded-2xl p-5 backdrop-blur-md">
-              <h3 className="text-2xl font-bold">100%</h3>
-              <p className="text-sm text-blue-100 mt-1">Secure Login</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Login Form */}
-        <div className="p-8 sm:p-12 bg-white">
-          <div className="mb-8">
-            <p className="text-sm font-semibold text-blue-600 mb-2">
-              LOGIN ACCOUNT
-            </p>
-            <h2 className="text-4xl font-bold text-slate-900">
-              Sign in
-            </h2>
-            <p className="text-slate-500 mt-3">
-              Please enter your details to continue.
-            </p>
-          </div>
-
-          <form onSubmit={handleLoginSubmit} className="space-y-5">
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Email Address
-              </label>
-
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  ✉️
-                </span>
-
-                <input
-                  type="email"
-                  value={emailAddress}
-                  onChange={(event) => setEmailAddress(event.target.value)}
-                  placeholder="example@email.com"
-                  required
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-100 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-                />
+        {/* LEFT SIDE - LOGIN FORM */}
+        <div className="h-full flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-cyan-50 px-8">
+          <div className="w-full max-w-md">
+            
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                Secure Login
               </div>
+
+              <h1 className="text-4xl font-bold text-slate-900 mb-3">
+                Welcome Back
+              </h1>
+
+              <p className="text-slate-500 leading-relaxed">
+                Please login to your account to continue managing your expense
+                tracking dashboard.
+              </p>
             </div>
 
-            {/* Password */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Password
-              </label>
+            {/* Form */}
+            <form onSubmit={handleLoginSubmit} className="space-y-5">
+              
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  Email Address
+                </label>
 
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  🔒
-                </span>
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    ✉️
+                  </span>
 
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  placeholder="Enter your password"
-                  required
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-100 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-                />
+                  <input
+                    type="email"
+                    value={emailAddress}
+                    onChange={(event) => setEmailAddress(event.target.value)}
+                    placeholder="example@email.com"
+                    required
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-blue-100 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Remember and Forgot */}
-            <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 text-sm text-slate-600">
-                <input
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(event) => setRememberMe(event.target.checked)}
-                  className="w-4 h-4 rounded"
-                />
-                Remember me
-              </label>
+              {/* Password */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  Password
+                </label>
 
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    🔒
+                  </span>
+
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    placeholder="Enter your password"
+                    required
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-blue-100 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  />
+                </div>
+              </div>
+
+              {/* Remember Me + Forgot Password */}
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2 text-sm text-slate-600">
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(event) => setRememberMe(event.target.checked)}
+                    className="w-4 h-4 rounded border-slate-300 accent-blue-600"
+                  />
+                  Remember me
+                </label>
+
+                <button
+                  type="button"
+                  className="text-sm font-semibold text-blue-600 hover:text-blue-800 transition"
+                >
+                  Forgot password?
+                </button>
+              </div>
+
+              {/* Button */}
               <button
-                type="button"
-                className="text-sm font-semibold text-blue-600 hover:text-blue-800"
+                type="submit"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition"
               >
-                Forgot password?
+                Sign In
               </button>
-            </div>
+            </form>
 
-            {/* Button */}
-            <button
-              type="submit"
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition"
-            >
-              Sign In
-            </button>
-          </form>
-
-          <p className="text-center text-sm text-slate-600 mt-8">
-            Don&apos;t have an account?{" "}
-            <Link
-              to="/register"
-              className="font-bold text-blue-600 hover:text-blue-800"
-            >
-              Create account
-            </Link>
-          </p>
+            {/* Register Link */}
+            <p className="text-center text-sm text-slate-600 mt-8">
+              Don&apos;t have an account?{" "}
+              <Link
+                to="/register"
+                className="font-bold text-blue-600 hover:text-blue-800 transition"
+              >
+                Create account
+              </Link>
+            </p>
+          </div>
         </div>
+
+        {/* RIGHT SIDE - IMAGE */}
+        <div className="hidden lg:block relative h-full">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+            alt="Expense tracking workspace"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/70 to-cyan-700/60"></div>
+
+          {/* Right Content */}
+          <div className="relative z-10 h-full flex flex-col justify-center px-16 text-white">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold mb-8">
+                <span className="w-2 h-2 bg-green-300 rounded-full"></span>
+                Expense Tracking System
+              </div>
+
+              <h2 className="text-6xl font-bold leading-tight">
+                Track your money smarter.
+              </h2>
+
+              <p className="text-blue-100 text-xl leading-relaxed mt-6">
+                Manage your expenses, monitor your spending, and understand your
+                financial habits using a simple modern dashboard.
+              </p>
+
+              {/* Small Cards */}
+              <div className="grid grid-cols-2 gap-5 mt-10">
+                <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-6">
+                  <p className="text-sm text-blue-100">Monthly Balance</p>
+                  <h3 className="text-3xl font-bold mt-2">RM 1,250</h3>
+                </div>
+
+                <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-6">
+                  <p className="text-sm text-blue-100">Total Expenses</p>
+                  <h3 className="text-3xl font-bold mt-2">RM 750</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
